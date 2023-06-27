@@ -1,5 +1,5 @@
 import components.ElectricCarBattery;
-import components.String;
+import components.Manufacturer;
 import components.Tyres;
 import components.VehicleEngine;
 import customers.Customer;
@@ -28,8 +28,8 @@ public class CustomerTest {
         battery = new ElectricCarBattery(400);
         engine = new VehicleEngine(1.6);
         tyres = new Tyres("redstone");
-        car = new Car(engine,tyres, String.BMW);
-        electricCar = new ElectricCar(engine, tyres, String.MAZDA, battery);
+        car = new Car("G10",engine,tyres, Manufacturer.BMW);
+        electricCar = new ElectricCar("W10", engine, tyres, Manufacturer.MAZDA, battery);
         vehicles.add(car);
         vehicles.add(electricCar);
         customer = new Customer(1200,vehicles);

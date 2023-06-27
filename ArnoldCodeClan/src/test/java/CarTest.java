@@ -13,13 +13,14 @@ public class CarTest {
     private VehicleEngine engine;
     private Tyres tyres;
     private Manufacturer manufacturer;
+    private Car car;
 
     @Before
     public void setUp(){
         engine = new VehicleEngine(1.3);
         tyres = new Tyres("michelin");
         manufacturer = Manufacturer.FORD;
-        Car car = new Car("G10",engine, tyres, manufacturer);
+        car = new Car("G10",engine, tyres, manufacturer);
     }
 
     @Test
@@ -32,7 +33,7 @@ public class CarTest {
     }
     @Test
     public void hasManufacturer(){
-        assertEquals(Manufacturer.FORD, this.manufacturer);
+        assertEquals(Manufacturer.FORD, car.getManufacturer());
     }
 
 

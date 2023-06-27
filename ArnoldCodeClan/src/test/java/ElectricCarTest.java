@@ -1,6 +1,6 @@
 
 import components.ElectricCarBattery;
-import components.String;
+import components.Manufacturer;
 import components.Tyres;
 import components.VehicleEngine;
 import org.junit.Before;
@@ -13,16 +13,17 @@ public class ElectricCarTest {
 
     private VehicleEngine engine;
     private Tyres tyres;
-    private String manufacturer;
+    private Manufacturer manufacturer;
     private ElectricCarBattery battery;
+    private ElectricCar electricCar;
 
     @Before
     public void setUp() {
         engine = new VehicleEngine(1.3);
         tyres = new Tyres("michelin");
-        manufacturer = String.FORD;
+        manufacturer = Manufacturer.FORD;
         battery = new ElectricCarBattery(200);
-        ElectricCar electricCar = new ElectricCar(engine, tyres, manufacturer, battery);
+        electricCar = new ElectricCar("W10",engine, tyres, manufacturer, battery);
     }
 
     @Test
@@ -37,7 +38,7 @@ public class ElectricCarTest {
 
     @Test
     public void hasManufacturer() {
-        assertEquals(String.FORD, this.manufacturer);
+        assertEquals(Manufacturer.FORD, electricCar.getManufacturer());
     }
 
     @Test
